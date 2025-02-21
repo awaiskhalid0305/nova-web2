@@ -56,7 +56,7 @@ export default function Home() {
   ];
 
   const addToCart = (item) => {
-    const isAlreadyAdd = cartItems.some((val) => val.id == item.id);
+    const isAlreadyAdd = cartItems?.some((val) => val.id == item.id);
     isAlreadyAdd
       ? RedNotify("Already Added In Cart")
       : (() => {
@@ -67,12 +67,12 @@ export default function Home() {
 
   const totalAmount = (i, check) => {
     if (check == "increase") {
-      const newArrIn = cartItems.map((nItem, index) =>
+      const newArrIn = cartItems?.map((nItem, index) =>
         index == i ? { ...nItem, quantity: nItem.quantity + 1 } : nItem
       );
       setCartItems(newArrIn);
     } else {
-      const newArrDec = cartItems.map((nItem, index) =>
+      const newArrDec = cartItems?.map((nItem, index) =>
         index == i ? { ...nItem, quantity: nItem.quantity - 1 } : nItem
       );
       setCartItems(newArrDec);
@@ -80,7 +80,7 @@ export default function Home() {
   };
 
   const deleteProduct = (item) => {
-    let newArr = cartItems.filter((obj) => obj.id !== item.id);
+    let newArr = cartItems?.filter((obj) => obj.id !== item.id);
     setCartItems(newArr);
   };
 
@@ -96,7 +96,7 @@ export default function Home() {
       <Drawer title="Cart" onClose={() => setOpen(false)} open={open}>
         <div>
           {cartItems.length !== 0 ? (
-            cartItems.map((item, i) => (
+            cartItems?.map((item, i) => (
               <div key={i} className="cart-product-container">
                 <div className="cart-image">
                   <img alt="img" src={item.img} />
