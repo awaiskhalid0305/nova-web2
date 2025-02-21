@@ -1,0 +1,9 @@
+export { default as search } from "./search.png";
+export { default as logo } from "./logo.png";
+export { default as close } from "./close.png";
+export { default as menu } from "./menu.png";
+export { default as cart } from "./cart.png";
+export { default as img1 } from "./img1.png";
+export { default as img2 } from "./img2.png";
+export { default as img3 } from "./img3.png";
+export { default as deleteIcon } from "./delete.png";
